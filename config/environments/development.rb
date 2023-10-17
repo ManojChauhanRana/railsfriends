@@ -14,6 +14,11 @@ Rails.application.configure do
   # Show full error reports.
   config.consider_all_requests_local = true
 
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
   # Enable server timing
   config.server_timing = true
 
@@ -37,7 +42,7 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 
@@ -74,5 +79,5 @@ Rails.application.configure do
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  
 end
