@@ -1,7 +1,9 @@
 class HomeController < ApplicationController
-  def indwx
+  def index
+ 
+      if current_user
+      redirect_to friends_index_path
+      end
   end
-  def about 
-    @about_me ="My name is Manoj Chauhan"
-  end
+ 
 end

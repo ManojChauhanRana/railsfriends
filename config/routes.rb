@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
+ 
+ 
+ 
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+ 
+  get 'posts/index'
   devise_for :users
-  
-  resources :friends
-  #get 'home/indwx'
+ get 'friends/index'
+ resources :friends
+   
   get 'home/about'
-  #root 'home#indwx'
-  root 'friends#index'
+  root 'home#index'
+   #root 'friendsindex'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
